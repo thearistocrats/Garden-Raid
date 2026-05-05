@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d05vi3bpoy055"]
+
+[ext_resource type="Script" uid="uid://b0nnvrecdyvyr" path="res://Entities/Rabbits/player.gd" id="1_nv2r5"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1510044554]
+script = ExtResource("1_nv2r5")

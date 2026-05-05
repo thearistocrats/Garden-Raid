@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cydkm4og4ktts"]
+
+[ext_resource type="Script" uid="uid://chw6shi6ie723" path="res://Entities/Vegetables/lettuce.gd" id="1_er1tu"]
+
+[node name="Lettuce" type="RigidBody2D" unique_id=896768415]
+script = ExtResource("1_er1tu")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdn7vgdngl1xv"]
+
+[ext_resource type="Script" uid="uid://ithvfhhfqp58" path="res://Entities/Farmer/farmer.gd" id="1_oj3wh"]
+
+[node name="Farmer" type="RigidBody2D" unique_id=2015122974]
+script = ExtResource("1_oj3wh")
