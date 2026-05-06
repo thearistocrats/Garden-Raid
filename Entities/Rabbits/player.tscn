@@ -1,6 +1,50 @@
 [gd_scene format=3 uid="uid://d05vi3bpoy055"]
 
 [ext_resource type="Script" uid="uid://b0nnvrecdyvyr" path="res://Entities/Rabbits/player.gd" id="1_nv2r5"]
+[ext_resource type="PackedScene" uid="uid://yie71r3tvmh2" path="res://Components/Health/Health.tscn" id="2_ub4bq"]
+[ext_resource type="PackedScene" uid="uid://ckywdbljy0v5l" path="res://Components/Movement/Movement.tscn" id="3_1sbfb"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1510044554]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nv2r5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv2r5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"lop",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"sploot",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1510044554 node_paths=PackedStringArray("movement", "health")]
+motion_mode = 1
 script = ExtResource("1_nv2r5")
+movement = NodePath("Movement")
+health = NodePath("Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579362440]
+shape = SubResource("CapsuleShape2D_nv2r5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=668117006]
+sprite_frames = SubResource("SpriteFrames_nv2r5")
+animation = &"hop"
+
+[node name="Health" parent="." unique_id=182596546 instance=ExtResource("2_ub4bq")]
+_stats = {
+"max_health": 100.0,
+"min_health": 0.0
+}
+
+[node name="Movement" parent="." unique_id=687254559 instance=ExtResource("3_1sbfb")]
+_stats = {
+"direction": Vector2(0, 0),
+"speed": 25.0
+}
