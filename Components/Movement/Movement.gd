@@ -4,9 +4,15 @@ class_name MovementComponent extends Node
 @export var _stats:Dictionary = {
 	"speed":0.0,
 	"direction":Vector2.ZERO
+	#"rotation":0.0
 }
 
 static func move_rabbit(body:CharacterBody2D, _delta:float) -> void:
 	var stats = body.movement._stats
 	body.velocity = stats.speed * stats.direction
-	body.move_and_collide(body.velocity)
+	#if stats.direction != Vector2.ZERO:
+	if stats.direction != Vector2.ZERO:
+		var direction_angle = (stats.direction.angle() * 180) / PI + 90
+		body.set_global_rotation_degrees(direction_angle)
+	body.move_and_slide()
+	#print(stats.direction)
