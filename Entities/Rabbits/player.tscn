@@ -1,36 +1,14 @@
 [gd_scene format=3 uid="uid://d05vi3bpoy055"]
 
 [ext_resource type="Script" uid="uid://b0nnvrecdyvyr" path="res://Entities/Rabbits/player.gd" id="1_nv2r5"]
-[ext_resource type="Texture2D" uid="uid://cvm6rt6kid06f" path="res://Assets/Rabbit/sprint.png" id="2_qm15o"]
 [ext_resource type="PackedScene" uid="uid://yie71r3tvmh2" path="res://Components/Health/Health.tscn" id="2_ub4bq"]
 [ext_resource type="PackedScene" uid="uid://ckywdbljy0v5l" path="res://Components/Movement/Movement.tscn" id="3_1sbfb"]
-[ext_resource type="Texture2D" uid="uid://c1tq6q7qge2co" path="res://Assets/Rabbit/hide.png" id="3_7d38o"]
-[ext_resource type="Texture2D" uid="uid://5dgy1imig6r1" path="res://Assets/Rabbit/loaf.png" id="4_7d38o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nv2r5"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_qm15o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_7d38o")
-}],
-"loop": true,
-"name": &"hop",
-"speed": 5.0
-}, {
 "frames": [],
 "loop": true,
-"name": &"lop",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_7d38o")
-}],
-"loop": true,
-"name": &"sploot",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -47,7 +25,7 @@ health = NodePath("Health")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=668117006]
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_nv2r5")
-animation = &"sploot"
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579362440]
 position = Vector2(1, 4)
