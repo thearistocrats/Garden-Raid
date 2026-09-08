@@ -19,6 +19,10 @@ farmer_attack = NodePath("FarmerAttack")
 shape = SubResource("CircleShape2D_72j5u")
 
 [node name="Health" parent="." unique_id=1498208014 instance=ExtResource("2_sukvv")]
+_stats = {
+"max_health": 15.0,
+"min_health": 0.0
+}
 
 [node name="FarmerAttack" parent="." unique_id=1672307748 instance=ExtResource("3_vig3b")]
 _stats = {

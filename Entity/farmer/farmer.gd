@@ -24,8 +24,9 @@ func _on_successfulhit(rabbit:Node, source:Node) -> void:
 	print("hit rabbit")
 
 func if_is_dead(is_dead:bool) -> void:
-	if if_is_dead: queue_free()
+	if is_dead:
+		queue_free()
 
 static func _on_gun_fired(source:Node, target:Node) -> void:
-	Health.damage(target, source.bullet_damage.damage)
+	Health.damage(target, source.bullet_damage._stats.damage)
 	Events.on_gun_hit.emit(target, source)
