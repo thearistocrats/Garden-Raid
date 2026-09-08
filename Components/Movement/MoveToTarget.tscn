@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d0txlc275y3jf"]
+
+[ext_resource type="Script" uid="uid://cnk23fc66w5bl" path="res://Components/Movement/move_to_target.gd" id="1_g1sip"]
+
+[node name="move_to_target" type="Node2D" unique_id=848806403]
+script = ExtResource("1_g1sip")

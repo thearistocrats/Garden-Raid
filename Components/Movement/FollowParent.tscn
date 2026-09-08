@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7oho2r0wvboc"]
+
+[ext_resource type="Script" uid="uid://drrk8i07opi1v" path="res://Components/Movement/follow_parent.gd" id="1_ketfv"]
+
+[node name="FollowParent" type="Node2D" unique_id=1320177044]
+script = ExtResource("1_ketfv")

@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://b117j6e305jau"]
+[gd_scene format=3 uid="uid://ce00louhypi3m"]
 
-[node name="Game" type="Node2D" unique_id=1920785420]
+[ext_resource type="Script" uid="uid://c7g15m57wf784" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://br4xac6njc1ti" path="res://Entity/farmer/Farmer.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://5c5qf7suie2f" path="res://Entity/player/player.tscn" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://ds34ip4qxqvt1" path="res://Entity/wall/Wall.tscn" id="4_ryrav"]
+
+[node name="Game" type="Node" unique_id=1491693080]
+script = ExtResource("1_80nbo")
+
+[node name="Farmer" parent="." unique_id=1629194242 instance=ExtResource("2_fc0e3")]
+position = Vector2(189, 84)
+
+[node name="Player" parent="." unique_id=558946928 instance=ExtResource("3_7jktm")]
+position = Vector2(226, 28)
+
+[node name="Wall" parent="." unique_id=487988193 instance=ExtResource("4_ryrav")]
+position = Vector2(274, 311)

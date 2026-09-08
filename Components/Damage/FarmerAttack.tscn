@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnec2pwkeognd"]
+
+[ext_resource type="Script" uid="uid://cskx1repbfx3k" path="res://Components/Damage/farmer_attack.gd" id="1_51fky"]
+
+[node name="FarmerAttack" type="Node" unique_id=1672307748]
+script = ExtResource("1_51fky")

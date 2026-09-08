@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://p1c0lff502bb"]
+
+[ext_resource type="Script" uid="uid://kqriqu4pxxv2" path="res://Entities/Wall/wall.gd" id="1_aetes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aetes"]
+size = Vector2(22, 214)
+
+[node name="Wall" type="StaticBody2D" unique_id=990156873]
+script = ExtResource("1_aetes")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=79540706]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=910137916]
+position = Vector2(243, 328)
+shape = SubResource("RectangleShape2D_aetes")

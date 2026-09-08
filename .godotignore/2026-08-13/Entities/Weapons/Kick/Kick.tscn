@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://swknd7oos84g"]
+
+[ext_resource type="Script" uid="uid://ti5h4mlmyeis" path="res://Entities/Weapons/Kick/kick.gd" id="1_a4pi3"]
+[ext_resource type="PackedScene" uid="uid://cdqs4sav5kywd" path="res://Components/Damage/Damage.tscn" id="2_otbns"]
+
+[node name="Kick" type="Node2D" unique_id=1208824888]
+script = ExtResource("1_a4pi3")
+
+[node name="Damage" parent="." unique_id=337652661 instance=ExtResource("2_otbns")]

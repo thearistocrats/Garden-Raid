@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://br4xac6njc1ti"]
+
+[ext_resource type="Script" uid="uid://ctmjba10pedph" path="res://Entity/farmer/farmer.gd" id="1_psv0d"]
+[ext_resource type="PackedScene" uid="uid://d0txlc275y3jf" path="res://Components/Movement/MoveToTarget.tscn" id="2_fmbrj"]
+[ext_resource type="PackedScene" uid="uid://beyhs4tb4bh30" path="res://Components/Health/Health.tscn" id="2_sukvv"]
+[ext_resource type="PackedScene" uid="uid://cnec2pwkeognd" path="res://Components/Damage/FarmerAttack.tscn" id="3_vig3b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72j5u"]
+
+[node name="Farmer" type="RigidBody2D" unique_id=622944965 node_paths=PackedStringArray("move_to_target", "health", "farmer_attack") groups=["farmer"]]
+contact_monitor = true
+max_contacts_reported = 999
+script = ExtResource("1_psv0d")
+move_to_target = NodePath("move_to_target")
+health = NodePath("Health")
+farmer_attack = NodePath("FarmerAttack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1137350350]
+shape = SubResource("CircleShape2D_72j5u")
+
+[node name="Health" parent="." unique_id=1498208014 instance=ExtResource("2_sukvv")]
+
+[node name="FarmerAttack" parent="." unique_id=1672307748 instance=ExtResource("3_vig3b")]
+_stats = {
+"damage": 15.0
+}
+
+[node name="move_to_target" parent="." unique_id=848806403 instance=ExtResource("2_fmbrj")]
+_stats = {
+"speed": 25.0,
+"target": Vector2(0, 0)
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

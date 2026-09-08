@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dwppqsimc0he3"]
+
+[ext_resource type="Script" uid="uid://cs7222sir6j3k" path="res://Components/Damage/kick.gd" id="1_eq6ub"]
+
+[node name="Kick" type="Node" unique_id=469975583]
+script = ExtResource("1_eq6ub")

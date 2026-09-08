@@ -1,4 +1,4 @@
-class_name HealthComponent extends Node
+class_name Health extends Node
 
 @export var _stats: Dictionary = {
 	"max_health": 0.0,
@@ -28,7 +28,9 @@ static func reset_health(body:Node) -> void:
 	var properties = health._properties
 	
 	HealthModules.reset_health(stats, properties)
-	HealthComponent.check_if_changed_health(health)
+	
+	health.health_changed.emit(Health.get_change_in_health(health))
+	health.is_dead.emit(properties.is_dead)
 
 static func damage(body:Node, amount) -> void:
 	var health = body.health
@@ -39,8 +41,8 @@ static func damage(body:Node, amount) -> void:
 	HealthModules.clamp_health(stats, properties)
 	HealthModules.check_is_dead(stats, properties)
 	
-	HealthComponent.check_if_changed_health(health)
-	if properties.is_dead: health.is_dead.emit(true)
+	health.health_changed.emit(Health.get_change_in_health(health))
+	health.is_dead.emit(properties.is_dead)
 
 static func heal(body:Node, amount) -> void:
 	var health = body.health
@@ -51,14 +53,16 @@ static func heal(body:Node, amount) -> void:
 	HealthModules.clamp_health(stats, properties)
 	HealthModules.check_is_dead(stats, properties)
 	
-	HealthComponent.check_if_changed_health(health)
-	if properties.is_dead: health.is_dead.emit(true)
-	
-#helper functions
-static func check_if_changed_health(health:HealthComponent) -> void:
-	var delta = health._properties.current_health - health._properties.previous_health
-	if delta != 0: health.health_changed.emit(delta)
+	health.health_changed.emit(Health.get_change_in_health(health))
+	health.is_dead.emit(properties.is_dead)
 
-static func get_health_fraction(health:HealthComponent) -> float:
+#helper functions
+static func get_change_in_health(health:Health) -> float:
+	return health._properties.current_health - health._properties.previous_health
+
+static func get_health_fraction(health:Health) -> float:
 	if health._stats.max_health == 0.0: return 0.0
 	return health._properties.current_health / health._stats.max_health
+
+static func get_is_dead(body:Node) -> bool:
+	return body.health._properties.is_dead

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://5c5qf7suie2f"]
+
+[ext_resource type="Script" uid="uid://t3bcwqn5tti3" path="res://Entity/player/player.gd" id="1_gj8e3"]
+[ext_resource type="PackedScene" uid="uid://beyhs4tb4bh30" path="res://Components/Health/Health.tscn" id="2_01ky3"]
+[ext_resource type="PackedScene" uid="uid://wks5bw001h2r" path="res://Entity/weapons/gun.tscn" id="2_8s5hf"]
+[ext_resource type="PackedScene" uid="uid://ct62ys2fvupas" path="res://Components/Movement/MovePlayer.tscn" id="2_s1twf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cwpow"]
+
+[node name="Player" type="CharacterBody2D" unique_id=558946928 node_paths=PackedStringArray("move_player", "health", "gun") groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_gj8e3")
+move_player = NodePath("MovePlayer")
+health = NodePath("Health")
+gun = NodePath("Gun")
+
+[node name="Gun" parent="." unique_id=873751411 instance=ExtResource("2_8s5hf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1967752222]
+shape = SubResource("CapsuleShape2D_cwpow")
+
+[node name="MovePlayer" parent="." unique_id=758157456 instance=ExtResource("2_s1twf")]
+_stats = {
+"direction": Vector2(0, 0),
+"speed": 500.0
+}
+
+[node name="Health" parent="." unique_id=1498208014 instance=ExtResource("2_01ky3")]
+_stats = {
+"max_health": 100.0,
+"min_health": 0.0
+}

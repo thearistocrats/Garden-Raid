@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://wks5bw001h2r"]
+
+[ext_resource type="Script" uid="uid://o2ygpara6aho" path="res://Entity/weapons/gun.gd" id="1_i7uuw"]
+[ext_resource type="PackedScene" uid="uid://twfp6rgadq5f" path="res://Components/Damage/BulletDamage.tscn" id="2_kqbwk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7uuw"]
+radius = 1.0
+height = 8.0
+
+[node name="Gun" type="Area2D" unique_id=873751411 node_paths=PackedStringArray("bullet_damage")]
+script = ExtResource("1_i7uuw")
+bullet_damage = NodePath("BulletDamage")
+
+[node name="BulletDamage" parent="." unique_id=1550730165 instance=ExtResource("2_kqbwk")]
+_stats = {
+"damage": 5.0
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=696646402]
+shape = SubResource("CapsuleShape2D_i7uuw")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
