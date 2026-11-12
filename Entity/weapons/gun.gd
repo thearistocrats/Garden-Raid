@@ -20,3 +20,4 @@ func _input(event: InputEvent) -> void:
 
 static func _on_successful_gun_hit(target:Node, source:Node) -> void:
 	print("successfulhit")
+	print(target.health._properties)

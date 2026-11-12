@@ -26,10 +26,9 @@ func get_direction() -> void:
 	else:
 		return#$AnimatedSprite2D.play("sploot")
 
-func damange_rabbit(source:Node, rabbit:Node) -> void:
-	rabbit.health.damage(self, source.farmer_attack.get_damage(source))
-	print("attempting damage on rabbit")
-	Events.rabbit_get_damage_from_farmer.emit(self, source)
+static func damange_rabbit(source:Node, rabbit:Node) -> void:
+	Health.damage(rabbit, source.farmer_attack.get_damage(source))
+	Events.rabbit_get_damage_from_farmer.emit(rabbit, source)
 	
 func _kill_rabbit(is_dead) -> void:
 	if !is_dead:return

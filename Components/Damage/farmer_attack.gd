@@ -10,5 +10,5 @@ class_name FarmerAttack extends Node
 @onready var default_stats = _stats
 @onready var default_properties = _properties
 
-static func get_damage(source:Node) -> float:
-	return source.farmer_attack._stats.damage
+static func get_damage(body:Node) -> float:
+	return body.farmer_attack._stats.damage

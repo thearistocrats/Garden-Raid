@@ -18,15 +18,17 @@ func _move_to_rabbit(rabbit:Node) -> void:
 	MoveToTarget.set_target(self, rabbit.global_position)
 
 func _on_body_entered(body: Node) -> void:
-	Events.farmer_attempt_rabbit.emit(self, body)
+	if body.is_in_group("rabbit"):
+		Events.farmer_attempt_rabbit.emit(self, body)
 
-func _on_successfulhit(rabbit:Node, source:Node) -> void:
+func _on_successfulhit(_rabbit:Node, _source:Node) -> void:
 	print("hit rabbit")
 
 func if_is_dead(is_dead:bool) -> void:
-	if is_dead:
-		queue_free()
+	if !is_dead:return
+	queue_free()
 
 static func _on_gun_fired(source:Node, target:Node) -> void:
 	Health.damage(target, source.bullet_damage._stats.damage)
 	Events.on_gun_hit.emit(target, source)
+	

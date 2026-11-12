@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0txlc275y3jf" path="res://Components/Movement/MoveToTarget.tscn" id="2_fmbrj"]
 [ext_resource type="PackedScene" uid="uid://beyhs4tb4bh30" path="res://Components/Health/Health.tscn" id="2_sukvv"]
 [ext_resource type="PackedScene" uid="uid://cnec2pwkeognd" path="res://Components/Damage/FarmerAttack.tscn" id="3_vig3b"]
+[ext_resource type="PackedScene" uid="uid://bwy8j8hnhuhuo" path="res://GUI/Healthbar/HealthBar.tscn" id="5_rhckb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_72j5u"]
 
@@ -34,5 +35,11 @@ _stats = {
 "speed": 25.0,
 "target": Vector2(0, 0)
 }
+
+[node name="HealthBar" parent="." unique_id=1864738921 instance=ExtResource("5_rhckb")]
+offset_left = -6.0
+offset_top = -15.0
+offset_right = 6.0
+offset_bottom = -11.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,3 +7,6 @@ class_name BulletDamage extends Node
 
 @onready var default_stats = _stats
 @onready var default_properties = _properties
+
+static func get_damage(body:Node) -> float:
+	return body.bullet_damage._stats.damage

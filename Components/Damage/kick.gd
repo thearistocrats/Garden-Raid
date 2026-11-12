@@ -8,6 +8,5 @@ class_name Kick extends Node
 @onready var default_stats = _stats
 @onready var default_properties = _properties
 
-static func kick(body:Node, target:Node) -> void:
-	#target.health.take_damage(from, body)
-	pass
+static func get_damage(body:Node) -> float:
+	return body.kick._stats.damage
