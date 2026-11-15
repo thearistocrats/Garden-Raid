@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1792942787
+::res://::1794778162
 game.gd::GDScript::7032903524064573831::1791476777::0::1::::<>Node<><>0<>0<><>::
 game.tscn::PackedScene::5106744520915651644::1791476751::0::1::::<><><>0<>0<><>::uid://c7g15m57wf784::::res://game.gd<>uid://br4xac6njc1ti::::res://Entity/farmer/Farmer.tscn<>uid://5c5qf7suie2f::::res://Entity/player/player.tscn<>uid://ds34ip4qxqvt1::::res://Entity/wall/Wall.tscn
 icon.svg::CompressedTexture2D::645151572677882544::1777961555::1777961558::1::::<><><>0<>0<>38adbfafcf11cec194714b668d958232<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
@@ -34,9 +34,9 @@ move_from_damage.gd::GDScript::821620727480218674::1786899915::0::1::::move_from
 move_player.gd::GDScript::5578341808465061922::1787771307::0::1::::MovePlayer<>Node<><>0<>0<><>::
 move_to_target.gd::GDScript::5707629740412436005::1786654031::0::1::::MoveToTarget<>Node<><>0<>0<><>::
 ::res://Entity/::1787787102
-::res://Entity/farmer/::1792941035
+::res://Entity/farmer/::1794710806
 farmer.gd::GDScript::6131750209607344449::1789519071::0::1::::<>RigidBody2D<><>0<>0<><>::
-Farmer.tscn::PackedScene::3640894624779447798::1792941035::0::1::::<><><>0<>0<><>::uid://ctmjba10pedph::::res://Entity/farmer/farmer.gd<>uid://d0txlc275y3jf::::res://Components/Movement/MoveToTarget.tscn<>uid://beyhs4tb4bh30::::res://Components/Health/Health.tscn<>uid://cnec2pwkeognd::::res://Components/Damage/FarmerAttack.tscn<>uid://bwy8j8hnhuhuo::::res://GUI/Healthbar/HealthBar.tscn
+Farmer.tscn::PackedScene::3640894624779447798::1794710806::0::1::::<><><>0<>0<><>::uid://ctmjba10pedph::::res://Entity/farmer/farmer.gd<>uid://d0txlc275y3jf::::res://Components/Movement/MoveToTarget.tscn<>uid://beyhs4tb4bh30::::res://Components/Health/Health.tscn<>uid://cnec2pwkeognd::::res://Components/Damage/FarmerAttack.tscn<>uid://quvjjc2w0t7x::::res://GUI/health bar/health bar.tscn
 ::res://Entity/player/::1789518360
 player.gd::GDScript::1391456075678958736::1789518360::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::2111644460029939691::1788827632::0::1::::<><><>0<>0<><>::uid://t3bcwqn5tti3::::res://Entity/player/player.gd<>uid://beyhs4tb4bh30::::res://Components/Health/Health.tscn<>uid://wks5bw001h2r::::res://Entity/weapons/gun.tscn<>uid://ct62ys2fvupas::::res://Components/Movement/MovePlayer.tscn
@@ -48,10 +48,11 @@ Wall.tscn::PackedScene::8482239726226962980::1786633454::0::1::::<><><>0<>0<><>:
 ::res://Entity/weapons/::1789519183
 gun.gd::GDScript::1039850721505764884::1789519051::0::1::::<>Area2D<><>0<>0<><>::
 gun.tscn::PackedScene::1565944904943625667::1789519183::0::1::::<><><>0<>0<><>::uid://o2ygpara6aho::::res://Entity/weapons/gun.gd<>uid://twfp6rgadq5f::::res://Components/Damage/BulletDamage.tscn
-::res://Events/::1789241535
+::res://Events/::1794770347
 Events.gd::GDScript::7562706712014903838::1788828233::0::1::::<>Node<><>0<>0<><>::
-Events.tscn::PackedScene::5923426177544940487::1789241535::0::1::::<><><>0<>0<><>::uid://df0ow64le0fgw::::res://Events/Events.gd
-::res://GUI/::1791476777
-::res://GUI/Healthbar/::1792940070
-HealthBar.tscn::PackedScene::3982141787418680898::1792940070::0::1::::<><><>0<>0<><>::uid://4twvt2fxc0ho::::res://GUI/Healthbar/health_bar.gd<>uid://cjjlytgklr37y::::res://Assets/Health Bar/back.png<>uid://dtqkuk16k3b16::::res://Assets/Health Bar/secondary.png
-health_bar.gd::GDScript::2076073958254332480::1792000022::0::1::::<>Node<><>0<>0<><>::
+Events.tscn::PackedScene::5923426177544940487::1794714704::0::1::::<><><>0<>0<><>::uid://df0ow64le0fgw::::res://Events/Events.gd
+Helper.gd::GDScript::407984172410319959::1794770347::0::1::::Helper<>Node<><>0<>0<><>::
+::res://GUI/::1794697478
+::res://GUI/health bar/::1794770482
+health bar.tscn::PackedScene::1165600659339875115::1794770482::0::1::::<><><>0<>0<><>::uid://dp02piyx26jvk::::res://GUI/health bar/health_bar.gd<>uid://jb5jlf4ildbi::::res://Assets/Health Bar/primary.png<>uid://dtqkuk16k3b16::::res://Assets/Health Bar/secondary.png
+health_bar.gd::GDScript::8265370753558983808::1794770474::0::1::::HealthBar<>Control<><>0<>0<><>::

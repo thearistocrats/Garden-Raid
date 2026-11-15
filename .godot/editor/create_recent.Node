@@ -1,7 +1,8 @@
 TextureProgressBar
+ColorRect
 ProgressBar
-Node
 Control
+Node
 CanvasLayer
 CanvasGroup
 Sprite2D
@@ -11,4 +12,3 @@ Area2D
 RigidBody2D
 StaticBody2D
 CharacterBody2D
-CollisionPolygon2D
